@@ -1,0 +1,12 @@
+name: GeneratOre
+version: 1.0
+description: Ore Generation
+author: ame94
+main: ca.ame94.generatore.PluginMain
+
+commands:
+    genore:
+        description: Genratore base command
+        permission: generatore.base
+        permission-message: §4You are not permitted to use this plugin.
+        usage: Please use '/genore help' for more info.
