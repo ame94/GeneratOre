@@ -10,4 +10,9 @@ public class Logger {
         Bukkit.getLogger().log(Level.INFO, "[GeneratOre] " + msg);
     }
 
+    public static void BroadcastAndLog(String msg) {
+        PluginMgr.getPlugin().getServer().broadcastMessage(msg);
+        Info(msg);
+    }
+
 }
