@@ -1,0 +1,22 @@
+# Which block to use for generator block
+GeneratorBlock: 'GOLD_BLOCK'
+
+# How long before generators produce new blocks? (in seconds)
+GenerationRate: 1.0
+
+# Which worlds allow use of this plugin
+MapWhitelist:
+   - 'world'
+   - 'world_nether'
+   - 'world_the_end'
+
+# Blocks to generate and how rare (1 in n chance of appearing)
+OreSelection:
+   - COAL_ORE: 5
+   - IRON_ORE: 8
+   - GOLD_ORE: 12
+   - REDSTONE_ORE: 10
+   - LAPIS_ORE: 15
+   - QUARTZ_ORE: 10
+   - EMERALD_ORE: 30
+   - DIAMOND_ORE: 40
