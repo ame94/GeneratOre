@@ -32,10 +32,10 @@ public class SignChangeListener implements Listener {
                 if (line1.equalsIgnoreCase("[generatore]")) {
                     Player player = event.getPlayer();
                     // Now check permissions
-                    if (player.hasPermission("generatore.create")) {
+                    if (!(player.hasPermission("generatore.create") || player.hasPermission("generatore.admin")) ) {
                         // Now check if generators are allowed on this map
                         Logger.Info("Checking world: " + player.getWorld().getName());
-                        if (Config.isMapPermitted(player.getWorld().getName())) {
+                        if (player.hasPermission("generatore.admin") || Config.isMapPermitted(player.getWorld().getName())) {
                             player.sendMessage(ChatColor.GREEN + "Created ore generator successfully.");
                             // Now pop a new ore block on top
                             attachedBlock.getRelative(BlockFace.UP).setType(OreGenerator.get());

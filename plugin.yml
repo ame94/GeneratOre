@@ -1,5 +1,5 @@
 name: GeneratOre
-version: 1.0
+version: 0.1
 description: Ore Generation
 author: ame94
 main: ca.ame94.generatore.PluginMain

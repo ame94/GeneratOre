@@ -24,7 +24,7 @@ public class BlockBreakListener implements Listener {
         if (Blocks.isOreBlock(minedBlock) || minedBlock.getType() == Material.COBBLESTONE) {
             if (Blocks.isGenerator(minedBlock.getRelative(BlockFace.DOWN))) {
                 Player miningPlayer = event.getPlayer();
-                if (!miningPlayer.hasPermission("generatore.use")) {
+                if (!(miningPlayer.hasPermission("generatore.use") || miningPlayer.hasPermission("generatore.admin")) ) {
                     miningPlayer.sendMessage(ChatColor.RED + "Hey! You're not allowed to use that!");
                     event.setCancelled(true);
                     return;
@@ -38,7 +38,7 @@ public class BlockBreakListener implements Listener {
         // Is this a generator block the player is trying to break?
         if (Blocks.isGenerator(minedBlock)) {
             Player miningPlayer = event.getPlayer();
-            if (!miningPlayer.hasPermission("generatore.use")) {
+            if (!(miningPlayer.hasPermission("generatore.use") || miningPlayer.hasPermission("generatore.admin")) ) {
                 miningPlayer.sendMessage(ChatColor.RED + "Hey! You're not allowed to break that!");
                 event.setCancelled(true);
                 return;
@@ -51,7 +51,7 @@ public class BlockBreakListener implements Listener {
             if (sign.getLine1().equalsIgnoreCase("[generatore]")) {
                 if (Blocks.isGeneratorBlockNear(minedBlock)) {
                     Player miningPlayer = event.getPlayer();
-                    if (!miningPlayer.hasPermission("generatore.create")) {
+                    if (!(miningPlayer.hasPermission("generatore.create") || miningPlayer.hasPermission("generatore.admin")) ) {
                         miningPlayer.sendMessage(ChatColor.RED + "Hey! You're not allowed to break that!");
                         event.setCancelled(true);
                         return;
