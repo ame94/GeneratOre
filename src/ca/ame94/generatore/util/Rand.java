@@ -13,4 +13,6 @@ public class Rand {
     public static int getInt(int min, int max) {
         return rand.nextInt(max - min + 1) + min;
     }
+
+    public static Double getDouble() { return rand.nextDouble(); }
 }

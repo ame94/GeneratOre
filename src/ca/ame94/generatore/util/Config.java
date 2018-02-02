@@ -1,20 +1,17 @@
 package ca.ame94.generatore.util;
 
+import ca.ame94.generatore.util.types.Materials;
 import org.bukkit.Material;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Config {
 
     private static Material genMaterialBlock = null;
     private static int generationRateTicks = 0;
     private static List<String> mapWhitelist = null;
-    private static HashMap<Material, Integer> materialDB = null;
-
+    private static Materials materials = null;
 
     public static void Init() {
         JavaPlugin p = PluginMgr.getPlugin();
@@ -28,21 +25,11 @@ public class Config {
         genMaterialBlock = getGeneratorBlock();
         generationRateTicks = getGenerationRateTicks();
         mapWhitelist = getMapWhitelist();
-        loadMaterialList();
+        materials = new Materials();
     }
 
-
-    public static void loadMaterialList() {
-        Map<String, Object> temp = new HashMap<>();
-
-        temp = PluginMgr.getPlugin().getConfig().getValues(true);
-        int occurance = 0;
-        Logger.Info("Materials used:");
-        for (String key : temp.keySet()) {
-            Logger.Info("  " + key);
-            //occurance = Integer.parseInt((String)temp.get(key));
-        }
-
+    public static Materials getMaterials() {
+        return materials;
     }
 
     /**
