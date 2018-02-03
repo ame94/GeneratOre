@@ -28,6 +28,18 @@ public class Config {
         materials = new Materials();
     }
 
+    public static void Reload() {
+        genMaterialBlock = null;
+        generationRateTicks = 0;
+        mapWhitelist = null;
+        materials = null;
+
+        genMaterialBlock = getGeneratorBlock();
+        generationRateTicks = getGenerationRateTicks();
+        mapWhitelist = getMapWhitelist();
+        materials = new Materials();
+    }
+
     public static Materials getMaterials() {
         return materials;
     }

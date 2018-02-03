@@ -55,6 +55,7 @@ public class PluginMain extends JavaPlugin {
                         sender.sendMessage("Reloading plugin configuration...");
                         Logger.Info("Reloading plugin configuration...");
                         PluginMgr.Reload();
+                        Config.Reload();
                     } else {
                         sender.sendMessage(ChatColor.RED + "You do not have permission to do that.");
                     }

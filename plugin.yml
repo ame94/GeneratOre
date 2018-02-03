@@ -1,5 +1,5 @@
 name: GeneratOre
-version: 0.1
+version: 0.2
 description: Ore Generation
 author: ame94
 main: ca.ame94.generatore.PluginMain
@@ -7,6 +7,6 @@ main: ca.ame94.generatore.PluginMain
 commands:
     genore:
         description: Genratore base command
-        permission: generatore.base
+        permission: generatore.admin
         permission-message: §4You are not permitted to use this plugin.
         usage: Please use '/genore help' for more info.
